@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .App-logo {
@@ -35,4 +38,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.work {
+    display: flex;
+    justify-content: center;
+}
+
+.workElement h5 {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20vw;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8vh;
+}
+
+.entries {
+    background-color: lightgreen;
 }

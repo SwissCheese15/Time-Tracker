@@ -26,7 +26,7 @@ class ListCreateEntryView(ListCreateAPIView):
 
     def get_queryset(self):
         # can be ordered here or in a Meta Class in the model
-        return Entry.objects.order_by("-created")
+        return Entry.objects
 
     def perform_create(self, serializer):
         serializer.save(worker=self.request.user)

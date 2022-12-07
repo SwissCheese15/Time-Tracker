@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-3bkoqhet$&nsz4vx1)=80(d9=42tp*r)r8w7q7o&u&dvo4bpj_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', "http://localhost:3000"]
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000"
+]
+
+INTERNAL_IPS = ['http://127.0.0.1']
 
 
 # Application definition
@@ -40,7 +48,8 @@ INSTALLED_APPS = [
     # apps installed by manu
     "work",
     "entry",
-    "rest_framework"
+    "rest_framework",
+    "user"
 ]
 
 MIDDLEWARE = [
@@ -51,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -70,6 +80,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'user.User'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
