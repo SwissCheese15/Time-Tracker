@@ -50,6 +50,12 @@
     margin-right: 3vw;
 }
 
+.workElement:hover {
+    cursor: pointer;
+    scale: 1.2;
+}
+
+
 .inputs {
     display: flex;
     flex-direction: column;
@@ -68,3 +74,22 @@
 .entries {
     background-color: lightgreen;
 }
+
+.submitButton {
+    width: 120px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: none;
+    border-style: none;
+    font-size: 15px;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    scale: 1.2;
+}
+
+input { outline: none; }
+
+

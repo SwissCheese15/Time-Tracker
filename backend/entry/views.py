@@ -28,5 +28,5 @@ class ListCreateEntryView(ListCreateAPIView):
         # can be ordered here or in a Meta Class in the model
         return Entry.objects
 
-    def perform_create(self, serializer):
-        serializer.save(worker=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(worker=self.request.user)
