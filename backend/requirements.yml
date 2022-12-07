@@ -1,0 +1,5 @@
+name: test_day
+dependencies:
+  - python=3.10.4
+  - pip:
+      - django==4.1.1
