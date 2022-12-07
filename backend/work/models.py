@@ -12,6 +12,7 @@ class Work(models.Model):
     creator = models.ForeignKey(User, related_name="initialiser", on_delete=models.PROTECT, blank=True)
 
 
+
     def __str__(self):
         return f'ID {self.pk}: {self.project_name}'
 

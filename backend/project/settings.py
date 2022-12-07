@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps installed by manu
     "work",
-    "entry"
+    "entry",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
