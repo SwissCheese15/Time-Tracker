@@ -101,7 +101,7 @@ function App() {
           fetch(url, config)
     }
 
-  return (<>
+  return (<div className="all">
     <div className="title">
     <img src="/smartLogo.png"></img>
     <h1>Smartfactory Time-Tracker</h1>
@@ -128,7 +128,7 @@ function App() {
                     {work.map(project => (
                         <div className="workElement" key={project.id} onClick={() => handleSelectWork(project.id)}>
                             {selectedWork === project.id ?
-                                <p>{project.project_name} {project.customer}</p> :
+                                <p style={{background: 'lightblue'}}>{project.project_name} {project.customer}</p> :
                                 <p>{project.project_name} {project.customer}</p>
                             }
                         </div> 
@@ -163,10 +163,14 @@ function App() {
             <div className='workList'>
                     {entries.map(e => (
                         <div className="entryElement" key={e.id}>
-                            <p>{e.comment}</p>
-                            <p>{timeConversion(e.time).hours} h {timeConversion(e.time).minutes} min</p>
-                            <p style={{color: 'red'}}>{e.work_project.project_name}</p>
-                            ----------------------------------
+                            {selectedUser === e.worker ? 
+                                <div>
+                                    <p style={{color: 'red'}}>{e.work_project.project_name}</p>
+                                    <p>{timeConversion(e.time).hours} h {timeConversion(e.time).minutes} min</p>
+                                    <p>{e.comment}</p>
+                                    ------------------------------------
+                                </div> : ""
+                            }
                         </div> 
                     ))}
                 </div>
@@ -174,7 +178,7 @@ function App() {
         </div>
 
     </div>
-    </>
+    </div>
   );
 }
 
